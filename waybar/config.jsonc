@@ -1,0 +1,81 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mode": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 0,
+    "modules-left": [
+        "custom/rofi",
+        "hyprland/workspaces"
+    ],
+    "modules-center": ["clock"],
+    "modules-right": [
+        "battery",
+        "backlight", 
+        "wireplumber", 
+        "custom/hyprshade",
+        "custom/bluetooth",
+        "custom/wifi",
+        "custom/wlogout"
+
+    ],
+
+    "wireplumber": {
+        "format": "{volume}% 󰕾",
+        "on-click": "helvum"
+        },
+    "custom/hyprshade":{
+        "format": "󰈈",
+        "on-click": "hyprshade toggle blue-light-filter"
+    },
+    "custom/wifi": {
+        "format": "󰖩",
+        "on-click":"nm-connection-editor"
+    },
+    "custom/bluetooth": {
+        "format": "󰂯",
+        "on-click":"blueman-manager"
+    },
+    "custom/wlogout": {
+        "format": "",
+        "on-click": "wlogout -b 2"
+    },
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "on-click": "activate",
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
+        }
+    },
+    "custom/rofi": {
+        "format": "Apps",
+        "on-click": "rofi -show drun"
+    },
+    "clock": {
+        "format": "{:%I:%M %p, %a,%d-%m-%Y}"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-"
+    },
+    "battery": {
+        "format": "{capacity}% 󱊣",
+        "format-charging": "{capacity}% 󱊦",
+        "format-plugged": "{capacity}% 󱊥"
+    }
+}

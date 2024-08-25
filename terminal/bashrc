@@ -14,7 +14,8 @@ alias :q='exit'
 alias onlyoffice='onlyoffice-dekstopeditors --ozone-platform=wayland'
 alias :wq='exit'
 alias webcord='webcord --ozone-platform=wayland'
-alias update='sudo pacman -Syyu && yay -Syyu'
+alias update='sudo pacman -Syyu && yay -Syu --aur'
+alias fzf='fzf --preview="bat --color=always {}"'
 
 unset GREP_OPTIONS
 HISTSIZE=10000

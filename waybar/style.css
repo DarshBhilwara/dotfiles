@@ -10,19 +10,19 @@
 window#waybar,
 window#waybar.empty,
 window#waybar.empty #window {
-    background-color:#1f1f28;
-    padding:0px;
+     background-color:#1f1f28;
     border:0px;
+  
 }
 
 tooltip {
-    color:white;
+    color: #ddd8bb;
     background: #1f1f28;
     border-radius: 10px;
     opacity:0.8;
     border-width: 2px;
     border-style: solid;
-    border-color: white;
+    border-color: #ddd8bb;
 }
 
 tooltip label {
@@ -64,6 +64,8 @@ tooltip label {
     padding: 0px;
     color: #ddd8bb;
     margin-right: 0px;
+    border-radius: 50%;
+  
 }
 
 #workspaces button.active {
@@ -115,6 +117,9 @@ tooltip label {
     margin-left: 10px;
     padding-right: 10px;
     padding-left: 0px;
+
+    /* border: 1px solid #ddd8bb; */
+    border-radius: 15px;
 }
 
 #custom-bluetooth {

@@ -15,7 +15,7 @@
         "battery",
         "backlight", 
         "wireplumber", 
-        "custom/hyprshade",
+        "custom/hyprsunset",
         "custom/bluetooth",
         "custom/wifi",
         "custom/wlogout"
@@ -26,9 +26,9 @@
         "format": "{volume}% 󰕾",
         "on-click": "helvum"
         },
-    "custom/hyprshade":{
+    "custom/hyprsunset":{
         "format": "󰈈",
-        "on-click": "hyprshade toggle blue-light-filter"
+        "on-click": "pkill hyprsunset || hyprsunset -t 4600"
     },
     "custom/wifi": {
         "format": "󰖩",

@@ -24,7 +24,7 @@ vim.opt.inccommand = 'split'
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 30
 
 -- [[ Basic Keymaps ]]
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
@@ -141,7 +141,15 @@ require('lazy').setup({
       }
     end,
   },
-
+  --  {
+  --    'MeanderingProgrammer/render-markdown.nvim',
+  --    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+  --    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+  --    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+  --    ---@module 'render-markdown'
+  --    ---@type render.md.UserConfig
+  --    opts = {},
+  --  },
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',

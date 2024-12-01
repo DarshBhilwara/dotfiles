@@ -1,71 +1,39 @@
 * {
     font-family: Arimo Font Family, monospace;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
     min-height: 0;
-    border-bottom:5px;
+    border-bottom:1px;
     font-size:98%;
 }
 
 window#waybar,
 window#waybar.empty,
 window#waybar.empty #window {
-     background-color:#1f1f28;
-    border:0px;
-  
+    background-color:#1f1f28;
+
 }
 
-tooltip {
-    color: #ddd8bb;
-    background: #1f1f28;
-    border-radius: 10px;
-    opacity:0.8;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #ddd8bb;
-}
-
-tooltip label {
-    color: #ddd8bb
-}
 
 .modules-right {
 	background-color: transparent;
-        color: #ddd8bb;
-	border-bottom: 2px;
-	border-radius: 0px;
-	padding-top: 1px;
-	padding-bottom: 1px;
-	padding-right: 10px;
-	padding-left: 0px;
+	color: #ddd8bb;
 }
 .modules-center {
 	background-color: transparent;
+	padding: 1px 0px;
 	color: #ddd8bb;
-	border-bottom: 2px;
-	border-radius: 0px;
-	padding-top: 1px;
-	padding-bottom: 1px;
+
 }
 .modules-left {
 	background-color: transparent;
-	border-style: solid;
-	border-color: #ddd8bb;
-	border-bottom: 2px;
-	border-radius: 0px;
-	padding-top: 1px;
-	padding-bottom: 1px;
-	padding-right: 0px;
-	padding-left: 10px;
 	color: #ddd8bb;
 }
 
 #workspaces button {
-    padding: 0px;
-    color: #ddd8bb;
-    margin-right: 0px;
+    padding: 1px 2px;
     border-radius: 50%;
-  
+    color: #ddd8bb;
 }
 
 #workspaces button.active {
@@ -76,92 +44,32 @@ tooltip label {
 #workspaces button.focused {
     color: #1f1f28;
     background: #ddd8bb;
-    border-radius: 0px;
 }
 
 #workspaces button.urgent {
+    background: #725e97;
     color: #1f1f28;
-    background: #ddd8bb;
-    border-radius: 0px;
 }
 
 #workspaces button.hover {
-    background: #ddd8bb;
+    background: #725e97;
     color: #1f1f28;
-    border-radius: 0px;
 }
 
-#custom-hyprshade,
-#custom-rofi,
-#wireplumber,
-#custom-bluetooth,
-#custom-wlogout,
-#clock,
-#battery,
-#custom-wifi,
-#workspaces,
-#backlight {
-    background: #1f1f28;
-    padding: 0px 10px;
-    margin: 0px 0px;
-    margin-top: 0px;
-    border-radius: 0px;
-    border: 0px solid #181825;
-}
-
-#workspaces {
-    background: #1f1f28;
-    border-radius: 0px;
+#custom-rofi, #custom-wlogout, #custom-wifi, #custom-hyprsunset, #wireplumber, #backlight, #battery{
+    border: 1px;
     border-style: solid;
     border-color: #ddd8bb;
-    margin-left: 10px;
-    padding-right: 10px;
-    padding-left: 0px;
-
-    /* border: 1px solid #ddd8bb; */
-    border-radius: 15px;
+    border-radius: 30px;
+    padding: 1px 5px;
+    margin: 0px 3px
 }
 
-#custom-bluetooth {
-    border-radius: 0px;
-    margin-left: 0px;
-}
-
-#custom-hyprshade {
-    border-radius:0px;
-    margin-left:0px;
-}
-
-#custom-rofi {
-    border-radius: 0px;
-}
-
-#custom-wlogout {
-    border-radius: 0px;
-    border-left: 0px;
-    border-right: 0px;
-}
-
-#clock {
-    border-radius: 0px;
-    margin-left: 0px;
-    border-right: 0px;
-}
-
-#custom-wifi {
-    border-radius: 0px;
-    border-left: 0px;
-    border-right: 0px;
-}
-
-#battery {
-    border-radius: 0px;    
-    margin-right: 0px;
-    border-left: 0px;
-}
-
-#wireplumber {
-    border-radius: 0px;
-    border-right: 0px;
-    margin-left: 0px;
+#custom-bluetooth{
+    border: 1px;
+    border-style: solid;
+    border-color: #ddd8bb;
+    border-radius: 30px;
+    padding: 1px 7px;
+    margin: 0px 3px
 }

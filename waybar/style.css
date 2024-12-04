@@ -48,7 +48,7 @@ window#waybar.empty #window {
 
 #workspaces button.urgent {
     background: #725e97;
-    color: #1f1f28;
+    color: #ddd8bb;
 }
 
 #workspaces button.hover {

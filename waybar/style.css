@@ -10,24 +10,29 @@
 window#waybar,
 window#waybar.empty,
 window#waybar.empty #window {
-    background-color:#1f1f28;
+    background-color: #1f1f28;
 
 }
 
 
 .modules-right {
-	background-color: transparent;
+	background-color: #1f1f28;
 	color: #ddd8bb;
+	padding: 0px 0px 2px 0px;
 }
 .modules-center {
-	background-color: transparent;
+	background-color: #1f1f28;
 	padding: 1px 0px;
 	color: #ddd8bb;
+	padding: 0px 0px 2px 0px;
+
 
 }
 .modules-left {
-	background-color: transparent;
+	background-color: #1f1f28;
 	color: #ddd8bb;
+	border-radius: 0;
+	padding: 0px 0px 2px 0px;
 }
 
 #workspaces button {

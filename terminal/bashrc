@@ -1,10 +1,11 @@
 alias bt='blueman-manager'
 alias wifi='nm-connection-editor'
 alias brave='brave --password-store=basic'
-alias ls='ls -lahrt --color=auto'
-alias sl='ls -lahrt --color=auto'
+alias ls='ls -lahv --color=auto'
+alias sl='ls -lahv --color=auto'
 alias grep='grep --color=auto'
 alias code='code --ozone-platform=wayland'
+alias gh='github-desktop --ozone-platform=wayland'
 alias brt='brightnessctl set'
 alias cp='cp -i'
 alias mv='mv -i'
@@ -16,6 +17,9 @@ alias :wq='exit'
 alias webcord='webcord --ozone-platform=wayland'
 alias update='sudo pacman -Syyu && yay -Syu --aur'
 alias fzf='fzf --preview="bat --color=always {}"'
+alias test='vim ~/test'
+alias dtest='cd ~/test/'
+alias :Ex='nvim .'
 
 unset GREP_OPTIONS
 HISTSIZE=10000

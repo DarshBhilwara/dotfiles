@@ -1,5 +1,5 @@
 * {
-    font-family: Arimo Font Family, monospace;
+    font-family: JetBrainsMono Nerd Font;
     font-weight: bold;
     font-size: 12px;
     min-height: 0;
@@ -61,20 +61,38 @@ window#waybar.empty #window {
     color: #1f1f28;
 }
 
-#custom-rofi, #custom-wlogout, #custom-wifi, #custom-hyprsunset, #wireplumber, #backlight, #battery{
+#custom-rofi, #wireplumber, #backlight, #battery{
     border: 1px;
     border-style: solid;
     border-color: #ddd8bb;
     border-radius: 30px;
-    padding: 1px 5px;
-    margin: 0px 3px
+    padding: 1px 7px;
+    margin: 0px 3px;
+}
+
+#custom-wlogout, #custom-wifi {
+    border: 1px;
+    border-style: solid;
+    border-color: #ddd8bb;
+    border-radius: 50%;
+    padding: 0px 7px 0px 4px;
+    margin: 0px 3px;
 }
 
 #custom-bluetooth{
     border: 1px;
     border-style: solid;
     border-color: #ddd8bb;
-    border-radius: 30px;
-    padding: 1px 7px;
-    margin: 0px 3px
+    border-radius: 50%;
+    padding: 1px 6px;
+    margin: 0px 3px;
+}
+
+#custom-hyprsunset{
+    border: 1px;
+    border-style: solid;
+    border-color: #ddd8bb;
+    border-radius: 50%;
+    padding: 0px 8px 0px 5px;
+    margin: 0px 3px;
 }

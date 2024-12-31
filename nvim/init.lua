@@ -45,10 +45,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
-vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
-vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
-vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
-vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+vim.keymap.set("n", "<leader>h", "<C-w><C-h>", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<leader>l", "<C-w><C-l>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<leader>j", "<C-w><C-j>", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<leader>k", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- lazy nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -140,7 +140,18 @@ require("mason").setup()
 
 --setting up mason-lspconfig
 require("mason-lspconfig").setup({
-	ensure_installed = { "bashls", "clangd", "ast_grep", "jsonls", "grammarly", "ltex", "pylsp", "sqls", "lua_ls" },
+	ensure_installed = {
+		"bashls",
+		"clangd",
+		"ast_grep",
+		"jsonls",
+		"marksman",
+		"ltex",
+		"pylsp",
+		"sqls",
+		"lua_ls",
+		"textlsp",
+	},
 })
 
 --setting up lspconfig
@@ -149,10 +160,11 @@ lspconfig.bashls.setup({})
 lspconfig.clangd.setup({})
 lspconfig.ast_grep.setup({})
 lspconfig.jsonls.setup({})
-lspconfig.grammarly.setup({})
+lspconfig.marksman.setup({})
 lspconfig.ltex.setup({})
 lspconfig.pylsp.setup({})
 lspconfig.sqls.setup({})
+lspconfig.textlsp.setup({})
 lspconfig.lua_ls.setup({})
 
 -- intentation guide by indent-blankline.nvim

@@ -53,7 +53,7 @@ vim.keymap.set("n", "<leader>k", "<C-w><C-k>", { desc = "Move focus to the upper
 -- lazy nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-	vim.fm.system({
+	vim.fn.system({
 		"git",
 		"clone",
 		"--filter=blob:none",

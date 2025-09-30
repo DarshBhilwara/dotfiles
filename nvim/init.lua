@@ -32,7 +32,7 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 30
+vim.opt.scrolloff = 40
 
 -- Highlight when yanking (copying) text
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -44,7 +44,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
 vim.keymap.set("n", "<leader>h", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<leader>l", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<leader>j", "<C-w><C-j>", { desc = "Move focus to the lower window" })
@@ -65,7 +64,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- lazy plugins
-
 local plugins = {
 	--colorscheme
 	{ "rebelot/kanagawa.nvim", name = "kanagawa", priority = 1000 },
@@ -95,6 +93,7 @@ local plugins = {
 	{ "L3MON4D3/LuaSnip", dependencies = { "saadparwaiz1/cmp_luasnip", "rafamadriz/friendly-snippets" } },
 	{ "hrsh7th/nvim-cmp" },
 	{ "stevearc/conform.nvim" },
+	{ "lervag/vimtex" },
 }
 local opts = {}
 
@@ -105,22 +104,34 @@ require("lazy").setup(plugins, opts)
 require("kanagawa").setup()
 vim.cmd.colorscheme("kanagawa-wave")
 
--- setting up telescope as fuzzy finder
+-- telescope
 local builtin = require("telescope.builtin")
--- space ff to search for files
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
--- space fg to search inside files
 vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
 
--- setting up treesitter for highlighting and indenting
+-- treesitter
 local config = require("nvim-treesitter.configs")
 config.setup({
-	ensure_installed = { "c", "lua", "vim", "javascript", "html", "markdown", "python", "bash" },
-	highlight = { enabled = true },
+	ensure_installed = {
+		"diff",
+		"luadoc",
+		"markdown_inline",
+		"query",
+		"c",
+		"lua",
+		"vim",
+		"javascript",
+		"html",
+		"markdown",
+		"python",
+		"bash",
+	},
+	auto_install = true,
+	highlight = { enable = true },
 	indent = { enable = true },
 })
 
--- setting up tree view by neo-tree
+-- neo-tree
 require("neo-tree").setup({
 	filesystem = {
 		filtered_items = {
@@ -132,13 +143,11 @@ require("neo-tree").setup({
 })
 vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>")
 
--- setting up lualine
+-- lualine
 require("lualine").setup()
 
---setting up mason
+-- mason + mason-lspconfig
 require("mason").setup()
-
---setting up mason-lspconfig
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"bashls",
@@ -146,31 +155,31 @@ require("mason-lspconfig").setup({
 		"ast_grep",
 		"jsonls",
 		"marksman",
-		"ltex",
 		"pylsp",
 		"sqls",
 		"lua_ls",
-		"textlsp",
+		"texlab",
+		"ltex",
 	},
 })
 
---setting up lspconfig
+-- lspconfig
 local lspconfig = require("lspconfig")
 lspconfig.bashls.setup({})
 lspconfig.clangd.setup({})
 lspconfig.ast_grep.setup({})
 lspconfig.jsonls.setup({})
-lspconfig.marksman.setup({})
-lspconfig.ltex.setup({})
 lspconfig.pylsp.setup({})
 lspconfig.sqls.setup({})
-lspconfig.textlsp.setup({})
+lspconfig.marksman.setup({})
 lspconfig.lua_ls.setup({})
+lspconfig.texlab.setup({})
+lspconfig.ltex.setup({})
 
--- intentation guide by indent-blankline.nvim
+-- indent-blankline
 require("ibl").setup()
 
--- lsp and autocomplete
+-- cmp
 local cmp = require("cmp")
 require("luasnip.loaders.from_vscode").lazy_load()
 cmp.setup({
@@ -192,13 +201,13 @@ cmp.setup({
 	}),
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp" },
-		{ name = "luasnip" }, -- For luasnip users.
+		{ name = "luasnip" },
 	}, {
 		{ name = "buffer" },
 	}),
 })
 
--- autoformat on save using conform
+-- conform
 local conform = require("conform")
 conform.setup({
 	notify_on_error = false,
@@ -217,17 +226,17 @@ conform.setup({
 	end,
 	formatters_by_ft = {
 		lua = { "stylua" },
-		-- python = { "isort", "black" },
-		-- javascript = { "prettierd", "prettier", stop_after_first = true },
 	},
 })
-
 vim.api.nvim_create_autocmd("BufWritePre", {
 	callback = function()
 		require("conform").format()
 	end,
 })
-
 vim.keymap.set("", "<leader>f", function()
 	require("conform").format({ async = true, lsp_format = "fallback" })
 end, { desc = "[F]ormat buffer" })
+
+--  VimTeX config
+vim.g.vimtex_view_method = "zathura" -- PDF viewer
+vim.g.vimtex_compiler_method = "latexmk"

@@ -10,33 +10,33 @@
         "custom/rofi",
         "hyprland/workspaces"
     ],
-    "modules-center": ["clock"],
+    "modules-center": [
+        "clock"
+    ],
     "modules-right": [
         "battery",
-        "backlight", 
-        "wireplumber", 
+        "backlight",
+        "wireplumber",
         "custom/hyprsunset",
         "custom/bluetooth",
         "custom/wifi",
         "custom/wlogout"
-
     ],
-
     "wireplumber": {
         "format": "{volume}% 󰕾",
         "on-click": "helvum"
-        },
-    "custom/hyprsunset":{
+    },
+    "custom/hyprsunset": {
         "format": "󰈈",
         "on-click": "pkill hyprsunset || hyprsunset -t 4600"
     },
     "custom/wifi": {
         "format": "󰖩",
-        "on-click":"nm-connection-editor"
+        "on-click": "nm-connection-editor"
     },
     "custom/bluetooth": {
         "format": "󰂯",
-        "on-click":"blueman-manager"
+        "on-click": "blueman-manager"
     },
     "custom/wlogout": {
         "format": "",
@@ -69,7 +69,16 @@
     "backlight": {
         "device": "intel_backlight",
         "format": "{percent}% {icon}",
-        "format-icons": ["󰪞","󰪟","󰪠","󰪡","󰪢","󰪣","󰪤","󰪥"],
+        "format-icons": [
+            "󰪞",
+            "󰪟",
+            "󰪠",
+            "󰪡",
+            "󰪢",
+            "󰪣",
+            "󰪤",
+            "󰪥"
+        ],
         "on-scroll-up": "brightnessctl set 1%+",
         "on-scroll-down": "brightnessctl set 1%-"
     },

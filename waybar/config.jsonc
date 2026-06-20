@@ -22,24 +22,26 @@
         "custom/wifi",
         "custom/wlogout"
     ],
+
     "wireplumber": {
-        "format": "{volume}% 󰕾",
+        "format": "{volume}% 󰕾 |",
         "on-click": "helvum"
     },
+
     "custom/hyprsunset": {
-        "format": "󰈈",
+        "format": " 󰈈  |",
         "on-click": "pkill hyprsunset || hyprsunset -t 4600"
     },
     "custom/wifi": {
-        "format": "󰖩",
+        "format": " 󰖩  |",
         "on-click": "nm-connection-editor"
     },
     "custom/bluetooth": {
-        "format": "󰂯",
+        "format": " 󰂯 |",
         "on-click": "blueman-manager"
     },
     "custom/wlogout": {
-        "format": "",
+        "format": " 󰐥 ",
         "on-click": "wlogout -b 2"
     },
     "hyprland/workspaces": {
@@ -68,7 +70,7 @@
     },
     "backlight": {
         "device": "intel_backlight",
-        "format": "{percent}% {icon}",
+        "format": "{percent}% {icon}  | ",
         "format-icons": [
             "󰪞",
             "󰪟",
@@ -83,8 +85,8 @@
         "on-scroll-down": "brightnessctl set 1%-"
     },
     "battery": {
-        "format": "{capacity}% 󱊣",
-        "format-charging": "{capacity}% 󱊦",
-        "format-plugged": "{capacity}% 󱊥"
+        "format": "{capacity}% 󱊣 | ",
+        "format-charging": "{capacity}% 󱊦 | ",
+        "format-plugged": "{capacity}% 󱊥 | "
     }
 }
